@@ -1,8 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Lyrics MVP",
-  "version": "0.5.4",
-  "description": "Shows synced lyrics beside YouTube videos.",
+  "name": "A4K",
+  "version": "0.5.5",
+  "description": "Lyrics sidebar for YouTube music videos.",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
   "host_permissions": [
     "https://www.youtube.com/*"
   ],

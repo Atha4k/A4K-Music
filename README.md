@@ -1,6 +1,6 @@
-# YouTube Lyrics MVP
+# A4K
 
-This is a simple Chrome extension MVP that:
+This is a Chrome extension for YouTube music videos that:
 
 - injects a lyrics panel into YouTube pages
 - syncs highlighted lines with the current video time
