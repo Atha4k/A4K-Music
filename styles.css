@@ -1,0 +1,173 @@
+#yt-lyrics-mvp-panel {
+  position: relative;
+  width: calc(100% + 8px);
+  height: min(78vh, 680px);
+  margin: 0 0 16px -8px;
+  padding: 18px 18px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #ee6e74 0%, #de6f94 40%, #8d59dc 100%);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#yt-lyrics-mvp-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 28%);
+  pointer-events: none;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-floating {
+  position: fixed;
+  top: 96px;
+  right: 16px;
+  width: 360px;
+  margin-left: 0;
+  z-index: 9999;
+}
+
+#yt-lyrics-mvp-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.yt-lyrics-mvp-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    "title artist toggle";
+  gap: 8px 12px;
+  margin-bottom: 18px;
+  align-items: start;
+}
+
+.yt-lyrics-mvp-title {
+  grid-area: title;
+  margin: 0;
+  font-size: clamp(34px, 4vw, 64px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+  color: #160f11;
+}
+
+.yt-lyrics-mvp-artist {
+  grid-area: artist;
+  margin: 2px 0 0;
+  align-self: start;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.yt-lyrics-mvp-artist:empty {
+  display: none;
+}
+
+.yt-lyrics-mvp-toggle {
+  grid-area: toggle;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(22, 15, 17, 0.18);
+  color: #fff6fa;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.yt-lyrics-mvp-toggle:hover {
+  background: rgba(22, 15, 17, 0.3);
+}
+
+.yt-lyrics-mvp-lines {
+  height: calc(100% - 56px);
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.yt-lyrics-mvp-lines::-webkit-scrollbar {
+  width: 6px;
+}
+
+.yt-lyrics-mvp-lines::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.yt-lyrics-mvp-line {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.98);
+  font-size: clamp(26px, 3.1vw, 40px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.yt-lyrics-mvp-line-unsynced {
+  opacity: 0.96;
+}
+
+.yt-lyrics-mvp-line-active {
+  color: #fff6da;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.yt-lyrics-mvp-empty {
+  max-width: 24ch;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed {
+  width: calc(100% + 8px);
+  min-width: 0;
+  height: 64px;
+  margin-left: -8px;
+  padding: 12px 14px;
+  border-radius: 22px;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed .yt-lyrics-mvp-header {
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    "title artist toggle";
+  align-items: center;
+  margin-bottom: 0;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed .yt-lyrics-mvp-toggle {
+  margin-bottom: 0;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed .yt-lyrics-mvp-title {
+  font-size: 28px;
+  line-height: 0.95;
+  max-height: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed .yt-lyrics-mvp-artist {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+#yt-lyrics-mvp-panel.yt-lyrics-mvp-panel-collapsed .yt-lyrics-mvp-lines {
+  display: none;
+}
